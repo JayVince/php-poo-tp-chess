@@ -1,5 +1,10 @@
 <?php
 require_once __DIR__ . '/vendor/autoload.php';
+
+use App\Model\ChessBoardModel;
+
+// $board = new ChessBoardModel();
+
 ?>
 
 <!DOCTYPE html>
@@ -15,214 +20,26 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 <body>
     <table>
-        <tr>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-        </tr>
-        <tr>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-            <td style="background-color: #D18B47">
-                Case
-            </td>
-            <td style="background-color: #FFCE9E">
-                Case
-            </td>
-        </tr>
+        <?php
+
+        for ($x = 1; $x <9; $x++) {
+            echo '<tr>';
+
+            for ($y = 1; $y <9; $y++) {
+                $xy = $x + $y;
+                if ($xy % 2 == 0) {
+                    echo '<td style="background-color: #FFCE9E">
+                        Case
+                    </td>';
+                } else {
+                echo '<td style="background-color: #D18B47">
+                        Case
+                    </td>';
+                }
+            }
+            echo '</tr>';
+        }
+        ?>
     </table>
 </body>
 
